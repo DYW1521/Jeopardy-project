@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeopardy Game</title>
+    <link rel="stylesheet" href="Jeopardy-project.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <div id="game-container">
+        <h1>Jeopardy!</h1>
+        <div id="score-display">Score: <span id="current-score">0</span></div>
+
+        <div id="jeopardy-board">
+            <!-- Categories Row -->
+            <div class="category-row">
+                <div class="World-History">World History</div>
+                <div class="Science">Science</div>
+                <div class="Literature">Literature</div>
+                <div class="Geography">Geography</div>
+                <div class="Sports">Sports</div>
+            </div>
+
+            <!-- Clues Rows -->
+            <div class="clue-row">
+                <div class="clue" World-History="0" data-value="100">$100</div>
+                <div class="clue" Science="1" data-value="100">$100</div>
+                <div class="clue" Literature="2" data-value="100">$100</div>
+                <div class="clue" Geography="3" data-value="100">$100</div>
+                <div class="clue" Sports="4" data-value="100">$100</div>
+            </div>
+            <div class="clue-row">
+                <div class="clue" World-History="0" data-value="200">$200</div>
+                <div class="clue" Science="1" data-value="200">$200</div>
+                <div class="clue" Literature="2" data-value="200">$200</div>
+                <div class="clue" Geography="3" data-value="200">$200</div>
+                <div class="clue" Sports="4" data-value="200">$200</div>
+            </div>
+            <div class="clue-row">
+                <div class="clue" World-History="0" data-value="300">$300</div>
+                <div class="clue" Science="1" data-value="300">$300</div>
+                <div class="clue" Literature="2" data-value="300">$300</div>
+                <div class="clue" Geography="3" data-value="300">$300</div>
+                <div class="clue" Sports="4" data-value="300">$300</div>
+            </div>
+            <div class="clue-row">
+                <div class="clue" World-History="0" data-value="400">$400</div>
+                <div class="clue" Science="1" data-value="400">$400</div>
+                <div class="clue" Literature="2" data-value="400">$400</div>
+                <div class="clue" Geography="3" data-value="400">$400</div>
+                <div class="clue" Sports="4" data-value="400">$400</div>
+            </div>
+            <div class="clue-row">
+                <div class="clue" World-History="0" data-value="500">$500</div>
+                <div class="clue" Science="1" data-value="500">$500</div>
+                <div class="clue" Literature="2" data-value="500">$500</div>
+                <div class="clue" Geography="3" data-value="500">$500</div>
+                <div class="clue" Sports="4" data-value="500">$500</div>
+            </div>
+        </div>
+
+        <!-- Modal for displaying questions/answers -->
+        <div id="question-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modal-category"></h2>
+                <p id="modal-question"></p>
+                <button id="reveal-answer-button">Reveal Answer</button>
+                <p id="modal-answer" class="hidden"></p>
+                <div class="modal-controls">
+                    <button id="correct-button">Correct</button>
+                    <button id="incorrect-button">Incorrect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Jeopardy-project.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
