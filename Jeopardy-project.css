@@ -1,4 +1,40 @@
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust based on your number of categories */
+    gap: 10px;
+    margin: 20px;
+}
+
+.category {
+    background-color: #000080; /* Dark blue */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.clue {
+    background-color: #0000CD; /* Medium blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.clue.answered {
+    background-color: #36454F; /* Darker gray for answered clues */
+    cursor: default;
+}
+
+
+
+
+
+
 .game-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,12 +44,16 @@
 }
 
 .category-row {
+    width: 100%;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
 
 .category-header {
+    width: 100%;
+    max-width: 150px;
     flex: 1;
     text-align: center;
     background: #3949ab;
@@ -25,11 +65,15 @@
 }
 
 .clue-grid, .clue-row {
+    width: 100%;
+    max-width: 800px;
     display: flex;
     justify-content: center;
 }
 
 .clue-cell {
+    width: 100%;
+    max-width: 150px;
     flex: 1;
     background: #283593;
     color: #fff;
@@ -47,6 +91,9 @@
 }
 
 .modal {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
     display: none;
     position: fixed;
     z-index: 1000;
@@ -59,7 +106,8 @@
 }
 
 .modal-content {
-    background: #fff;
+    width: 100%;
+    max-width: 800px;
     margin: 10% auto;
     padding: 20px;
     border-radius: 10px;
@@ -68,12 +116,16 @@
 }
 
 .score-display {
+    width: 100%;
+    max-width: 800px;
     margin-top: 20px;
     font-size: 1.2em;
     color: #fff;
 }
 
 button {
+    width: 100%;
+    max-width: 800px;
     margin: 10px;
     padding: 10px 20px;
     border: none;

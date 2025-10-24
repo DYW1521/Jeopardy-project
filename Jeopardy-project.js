@@ -62,7 +62,27 @@ function renderBoard(data) {
         boardElement.appendChild(categoryDiv);
     });
 }
+function createGameBoard() {
+    const gameBoard = document.getElementById('game-board');
+    gameBoard.innerHTML = ''; // Clear existing board
 
+    gameData.forEach((categoryData, categoryIndex) => {
+        const categoryDiv = document.createElement('div');
+        categoryDiv.classList.add('category');
+        categoryDiv.innerHTML = `<h2>${categoryData.category}</h2>`;
+        gameBoard.appendChild(categoryDiv);
+
+        categoryData.clues.forEach((clue, clueIndex) => {
+            const clueDiv = document.createElement('div');
+            clueDiv.classList.add('clue');
+            clueDiv.textContent = clue.value;
+            clueDiv.dataset.categoryIndex = categoryIndex;
+            clueDiv.dataset.clueIndex = clueIndex;
+            clueDiv.addEventListener('click', handleClueClick);
+            categoryDiv.appendChild(clueDiv);
+        });
+    });
+}
 // Function to show a question
 function showQuestion(clue) {
     const questionDisplay = document.getElementById("question-display");
@@ -80,4 +100,18 @@ function showQuestion(clue) {
 // Initialize the game
 document.addEventListener("DOMContentLoaded", () => {
     renderBoard(gameData);
+    function handleClueClick(event) {
+    const categoryIndex = event.target.dataset.categoryIndex;
+    const clueIndex = event.target.dataset.clueIndex;
+    const clue = gameData[categoryIndex].clues[clueIndex];
+
+    // Display the question (e.g., in a modal or dedicated div)
+    document.getElementById('question-display').textContent = clue.question;
+
+    // Mark the clue as answered (e.g., change its appearance, disable clicks)
+    event.target.classList.add('answered');
+    event.target.removeEventListener('click', handleClueClick);
+
+    // Implement logic for players to answer and score points
+}
 });
