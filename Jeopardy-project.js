@@ -92,11 +92,7 @@ function showQuestion(clue) {
     questionDisplay.textContent = clue.question;
     answerDisplay.textContent = ""; // Clear previous answer
     revealButton.onclick = () => answerDisplay.textContent = clue.answer;
-
-    // Show the question modal or area
-    // ...
 }
-
 // Initialize the game
 document.addEventListener("DOMContentLoaded", () => {
     renderBoard(gameData);
@@ -104,14 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const categoryIndex = event.target.dataset.categoryIndex;
     const clueIndex = event.target.dataset.clueIndex;
     const clue = gameData[categoryIndex].clues[clueIndex];
-
     // Display the question (e.g., in a modal or dedicated div)
     document.getElementById('question-display').textContent = clue.question;
-
     // Mark the clue as answered (e.g., change its appearance, disable clicks)
     event.target.classList.add('answered');
     event.target.removeEventListener('click', handleClueClick);
-
-    // Implement logic for players to answer and score points
 }
 });
+
